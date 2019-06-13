@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>index page</title>
+	<meta http-equiv="Content-Type"
+	        content="text/html; charset=UTF-8" />
+	<style>
+	h1 { font-size:18pt; font-weight:bold; color:gray; }
+	body { font-size:13pt; color:gray; margin:5px 25px; }
+	tr { margin:5px; }
+	th { padding:5px; color:white; background:darkgray; }
+	td { padding:5px; color:black; background:#e0e0ff; }
+	</style>
+</head>
+<body>
+	<h1 th:text="${title}">index page</h1>
+	<p th:text="${msg}"></p>
+	<table>
+	<tr><th>지역</th><th>지점명</th><th>전화번호</th><th>상세보기</th></tr>
+	<tr th:each="obj : ${datalist}">
+		<td th:text="${obj.area}"></td>
+	    <td th:text="${obj.name}"></td>
+	    <td th:text="${obj.tel}"></td>
+	    <td><input type="button" value="보기" onclick="location.href='eidt'"/></td>
+	</tr>
+	</table>
+</body>
+</html>

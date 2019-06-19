@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface MyDataMongoRepository extends MongoRepository<MyDataMongo, Long> 
 {
-	public List<MyDataMongo> findById(int i);
+	public List<MyDataMongo> findById(String i);
 	public List<MyDataMongo> findByName(String s);
 }

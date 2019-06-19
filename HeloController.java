@@ -55,7 +55,7 @@ public class HeloController {
 		            @RequestParam("name") String name,
 		            @RequestParam("address") String address,
 		            @RequestParam("tel") String tel,
-		            ModelAndView mav) 
+		            ModelAndView mov) 
     {
 	   
     	 MyDataMongo mydata = new MyDataMongo(area,name,address,tel);

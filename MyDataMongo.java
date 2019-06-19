@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 public class MyDataMongo {
 	@Id
 	
-	private int id;
+	private String id;
  	
 	private String area;
 	private String name;
@@ -22,7 +22,7 @@ public class MyDataMongo {
         this.tel = tel;
 	}
    
-    public int getId() 
+    public String getId() 
     {
         return id;
     }

@@ -13,7 +13,7 @@
 	</style>
 </head>
 <body>
-	<h1 th:text="${title}">index</h1>
+	<h1 th:text="${title}">index page</h1>
 	<p th:text="${msg}"></p>
 	<table>
 	<tr><th>지역</th><th>지점명</th><th>전화번호</th><th>상세보기</th></tr>
@@ -24,5 +24,6 @@
 	    <td><input type="button" value="보기" onclick="location.href='eidt'"/></td>
 	</tr>
 	</table>
+	<input type="button" value="추가" onclick="location.href='insert'"/>
 </body>
 </html>

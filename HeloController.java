@@ -30,14 +30,13 @@ public class HeloController {
     @RequestMapping(value = "/", method = RequestMethod.POST)
     @Transactional(readOnly=false)
     public ModelAndView from(
-                    @RequestParam("id") int id,
                     @RequestParam("area") String area,
                     @RequestParam("name") String name,
                     @RequestParam("address") String address,
                     @RequestParam("tel") String tel,
                     ModelAndView mov) 
     {
-        MyDataMongo mydata = new MyDataMongo(id,area,name,address,tel);
+        MyDataMongo mydata = new MyDataMongo(area,name,address,tel);
         repository.save(mydata);
         return new ModelAndView("redirect:/");
     }
@@ -51,7 +50,6 @@ public class HeloController {
     
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public ModelAndView add(
-		    		@RequestParam("id") int id,
 		            @RequestParam("area") String area,
 		            @RequestParam("name") String name,
 		            @RequestParam("address") String address,
@@ -59,7 +57,7 @@ public class HeloController {
 		            ModelAndView mav) 
     {
 	   
-    	 MyDataMongo mydata = new MyDataMongo(id,area,name,address,tel);
+    	 MyDataMongo mydata = new MyDataMongo(area,name,address,tel);
          repository.save(mydata);
          return new ModelAndView("redirect:/");
 	    
@@ -89,7 +87,6 @@ public class HeloController {
     
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public ModelAndView update(
-	    		@RequestParam("id") int id,
 	            @RequestParam("area") String area,
 	            @RequestParam("name") String name,
 	            @RequestParam("address") String address,
@@ -97,7 +94,7 @@ public class HeloController {
 	            ModelAndView mav) 
     {
  	   
-   	 	MyDataMongo mydata = new MyDataMongo(id,area,name,address,tel);
+   	 	MyDataMongo mydata = new MyDataMongo(area,name,address,tel);
         repository.save(mydata);
         return new ModelAndView("redirect:/edit{id}");
 	    
@@ -115,7 +112,6 @@ public class HeloController {
     
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public ModelAndView remove(
-	    		@RequestParam("id") int id,
 	            @RequestParam("area") String area,
 	            @RequestParam("name") String name,
 	            @RequestParam("address") String address,

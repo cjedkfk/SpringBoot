@@ -49,6 +49,7 @@ public class HeloController {
     }
     
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    @Transactional(readOnly=false)
     public ModelAndView add(
 		            @RequestParam("area") String area,
 		            @RequestParam("name") String name,

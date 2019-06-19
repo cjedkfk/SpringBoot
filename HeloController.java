@@ -99,28 +99,5 @@ public class HeloController {
         return new ModelAndView("redirect:/edit{id}");
 	    
    }
-    @RequestMapping(value = "/delete", method = RequestMethod.GET)
-    public ModelAndView delete(ModelAndView mav) 
-    {
-        mav.setViewName("delete");
-        mav.addObject("title","delete Page");
-        mav.addObject("msg","MyData의 예제입니다.");
-        List<MyDataMongo> list = repository.findAll();
-        mav.addObject("datalist", list);
-        return mav;
-    }
-    
-    @RequestMapping(value = "/delete", method = RequestMethod.POST)
-    public ModelAndView remove(
-	            @RequestParam("area") String area,
-	            @RequestParam("name") String name,
-	            @RequestParam("address") String address,
-	            @RequestParam("tel") String tel,
-	            ModelAndView mav) 
-    {
- 	   
-   	 	repository.deleteAll();
-        return new ModelAndView("redirect:/");
-	    
-   }
+
 }

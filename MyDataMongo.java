@@ -13,7 +13,7 @@ public class MyDataMongo {
 	private String address;
 	private String tel;
 	
-	public MyDataMongo(int id, String area, String name, String address, String tel) 
+	public MyDataMongo(String area, String name, String address, String tel) 
 	{
         super();
         this.area = area;
